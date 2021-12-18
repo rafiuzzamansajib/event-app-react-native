@@ -21,12 +21,13 @@ const Featured = ({ navigation }) => {
       }}>
         <ImageBackground
         resizeMode='cover'
-        borderRadius={SIZES.radius}
         source={item.image}
         style={{
           width: SIZES.width / 2+70,
           height: SIZES.width / 2+70,
-          justifyContent:'space-between'
+          justifyContent:'space-between',
+          borderRadius:20
+
         }}
         >
           <View style={{
@@ -35,11 +36,11 @@ const Featured = ({ navigation }) => {
             marginVertical:15
           }}>
           <DateBox>
-            <McText body5 color={COLORS.black} style={{
+            <McText body5  style={{
               opacity:.5,
               letterSpacing:2
             }}>{moment(item.startingTime).format('MMM').toUpperCase()}</McText>
-            <McText h2 color={COLORS.black}>{moment(item.startingTime).format('DD')}</McText>
+            <McText h2 >{moment(item.startingTime).format('DD')}</McText>
           </DateBox>
           </View>
           <View style={{
@@ -67,11 +68,10 @@ const Featured = ({ navigation }) => {
         <SearchView>
           <McIcon source={icons.search} size={24}/>
           <TextInput
+          h4
           placeholder='Search'
-          placeholderTextColor={COLORS.gray1}
+       
           style={{
-            ...FONTS.h4,
-            color:COLORS.white,
             width: 250
           }}
           ></TextInput>
@@ -84,7 +84,6 @@ const Featured = ({ navigation }) => {
       <View>
         <FlatList
         horizontal
-        contentContainerStyle={{}}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => 'event_' + item.id}
         data={dummyData.Events}
@@ -97,13 +96,12 @@ const Featured = ({ navigation }) => {
         <McText h5>More For You</McText>
       </SectionTitle>
       <LinearGradient
-      color={COLORS.linear}
       start={{x:0,y:0}}
       end={{x:1,y:1}}
       style={{
         height:120,
         marginHorizontal:30,
-        borderRadius:SIZES.radius,
+        borderRadius:20,
         justifyContent:'center',
         alignItems:'center'
       }}
@@ -136,8 +134,8 @@ flex-direction: row-reverse;
 const SectionSearch = styled.View`
 margin: 4px ${SIZES.padding};
 height: 50px;
-background-color: ${COLORS.input};
-border-redius: 15px;
+
+border-radius: 15px;
 justify-content: center;
 `
 const SearchView = styled.View`
@@ -154,7 +152,7 @@ const DateBox = styled.View`
 width: 60px;
 height: 60px;
 border-radius: 15;
-background-color: ${COLORS.white};
+
 justify-content:center;
 align-items:center;
 `
@@ -162,7 +160,7 @@ const GiftBox = styled.View`
 width: 50px;
 height: 50px;
 border-radius: 15;
-background-color: ${COLORS.white};
+
 justify-content:center;
 align-items:center;
 `
@@ -171,7 +169,7 @@ align-items:center;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.black
+    backgroundColor: "#000000"
   },
 });
 

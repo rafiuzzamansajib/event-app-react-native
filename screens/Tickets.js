@@ -1,10 +1,19 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import { McText } from '../components';
+import { COLORS, SIZES } from '../constants';
 
 const Tickets = ({ params }) => {
   return (
     <View style={styles.container}>
-      <Text style={{ color: '#fff', fontSize: 30 }}>Tickets</Text>
+      <McText h2 style={{
+        backgroundColor:COLORS.gray,
+        borderRadius:SIZES.radius,
+        color:COLORS.white,
+
+      }}>
+        For New Event Ticket Not Avaiable!!
+      </McText>
     </View>
   );
 };

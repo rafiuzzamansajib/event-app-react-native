@@ -68,18 +68,6 @@ const Tabs = ({ params }) => {
         }}
       />
       <Tab.Screen
-        name="Schedule"
-        component={Schedule}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.tab_2} />
-          ),
-          tabBarLabel: ({ focused }) => (
-            <TabLabel focused={focused} text="Schedule" />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Tickets"
         component={Tickets}
         options={{
@@ -88,18 +76,6 @@ const Tabs = ({ params }) => {
           ),
           tabBarLabel: ({ focused }) => (
             <TabLabel focused={focused} text="Tickets" />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Mine"
-        component={Mine}
-        options={{
-          tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.tab_4} />
-          ),
-          tabBarLabel: ({ focused }) => (
-            <TabLabel focused={focused} text="Mine" />
           ),
         }}
       />
